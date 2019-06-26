@@ -1,0 +1,753 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Gophercon keynote</title>
+
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="ext/bootstrap-4.1.3/css/bootstrap.css">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- remove annoying shadow around images -->
+		<style>
+			.reveal section img {
+				background-color:white;
+				border:0;
+				box-shadow: 0 0 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="img/gopherconf.png" data-background-repeat="" data-background-size="100%">
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<p><small>W<span style="text-transform: lowercase;">ojciech</span> B<span style="text-transform: lowercase;">arczyński</span> [H<span style="text-transform: lowercase;">ead of</span> E<span style="text-transform: wlowercase;">ngineering</span>]<br />
+										<a href="https://smacc.io" style="color:#3149a8">SMACC.<span style="text-transform: lowercase;">io</span></a> | <a href="https://hypatos.ai" style="color:#3149a8">H<span style="text-transform: lowercase;">ypatos.ai</span></a><br />
+										</span> G<span style="text-transform: lowercase;">dańsk</span>, 27 J<span style="text-transform: lowercase;">uly</span> 2019</small></p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+#### G<span style="text-transform: lowercase;">olang</span>
+
+<img src="img/TEACHING_GOPHER.png"
+	style="background-color:white;border:0;width:60%"/>
+
+<p>What did it teach me? And what was next.</p>
+					</script>
+				</section>
+
+				<section data-background="#000000">
+					<h3>B<span style="text-transform: lowercase;">eginnings</h3>
+					<div class="row">
+						<div class='col-md-6'>
+							<ul>
+								<li style="margin: 0 0 27px 0;">from Berlin to Indonesia</li>
+								<li style="margin: 0 0 27px 0;">Successful mobile e-commerce</li>
+								<li style="margin: 0 0 27px 0;">Legacy developed <br />in death march &#128128;</li>
+							</ul>
+						</div>
+						<div class='col-md-1'>
+						</div>
+						<div class='col-md-5'>
+							<!-- top left top right bottom right bottom left -->
+							<img src="img/lyke/lyke_user.jpg"
+								style="background-color:white;border:0;width:90%;border-radius:10% 10% 10% 10%;"/>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#000000">
+					<h3>P<span style="text-transform: lowercase;">lan</h3>
+					<div class="row">
+						<div class='col-md-6'>
+							<ul>
+								<li style="margin: 0 0 27px 0;">New features in Golang</li>
+								<li style="margin: 0 0 27px 0;">Move to Kubernetes (GCP)</li>
+								<li style="margin: 0 0 27px 0;">Get team on board</li>
+							</ul>
+						</div>
+						<div class='col-md-1'>
+						</div>
+						<div class='col-md-5'>
+							<!-- top left top right bottom right bottom left -->
+							<img src="img/lyke/lyke_user.jpg"
+								style="background-color:white;border:0;width:90%;border-radius:10% 10% 10% 10%;"/>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="row">
+						<div class='col-md-4'>
+						<h4>We mostly like</h4>
+							<ul>
+								<li style="margin: 0 0 20px 0;">Standard library</li>
+								<li style="margin: 0 0 20px 0;">Composition</li>
+								<li style="margin: 0 0 20px 0;">...</li>
+								<li style="margin: 0 0 20px 0;">Idiomatic way</li>
+								<li style="margin: 0 0 20px 0;"><a href="https://go-proverbs.github.io/">go proverbs</a></li>
+							</ul>
+						</div>
+						<div class='col-md-1'>
+						</div>
+						<div class='col-md-7'>
+							<img src="img/Unicorn_Gopher.png"
+								class="center-block" style="background-color:white;border:0;width: 90%"/>
+							</div>
+						</div>
+
+						<!--
+						https://golang.org/doc/effective_go.html
+						https://github.com/golang/go/wiki
+						Idiomatic Go
+						https://dmitri.shuralyov.com/idiomatic-go
+						https://github.com/golang/go/wiki/CodeReviewComments
+						-->
+
+						<!--
+						Golang UK Conference 2016 - Dave Cheney - SOLID Go Design
+
+						https://www.youtube.com/watch?v=zzAdEt3xZ1M
+						-->
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+#### S<span style="text-transform: lowercase;">implicity</span>
+
+- Simplicity = low cognitive load
+- Easy to start
+- Increase readability
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+#### L<span style="text-transform: lowercase;">ow</span> C<span style="text-transform: lowercase;">ognitive</span>
+
+- People better feel about tech
+- Faster adoption
+- Less resistance
+					</script>
+					<!--
+					https://techbeacon.com/app-dev-testing/forget-monoliths-vs-microservices-cognitive-load-what-matters
+
+					Maybe even less keywords in Golang:
+
+					GothamGo 2018 - Things in Go I Never Use by Mat Ryer
+					https://www.youtube.com/watch?v=5DVV36uqQ4E
+					-->
+
+					<!--
+					Good paragraph on people better feel about tech":
+					https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/
+					-->
+				</section>
+
+				<section>
+					<div class="row">
+						<div class='col-md-4'>
+							<h4>G<span style="text-transform: lowercase;">olang culture</h4>
+								<ul>
+									<li style="margin: 0 0 20px 0;">Ruby?</li>
+									<li style="margin: 0 0 20px 0;">Docker?</li>
+									<li style="margin: 0 0 20px 0;">...</li>
+									<li style="margin: 0 0 20px 0;">Golang</li>
+								</ul>
+							</div>
+							<div class='col-md-1'>
+							</div>
+							<div class='col-md-7'>
+								<img src="img/GOPHER_SHARE.png"
+								class="center-block" style="background-color:white;border:0;width: 80%"/>
+							</div>
+					</div>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### R<span style="text-transform: lowercase;">edundant code</span>
+
+- A fair price fighting complexity
+- 9 years with <code>err != nil</code>
+- Repeat yourself (in tests) by Hashicorp<br /><small>[Mitchell Hashimoto - Advanced Testing with Go](https://www.youtube.com/watch?v=8hQG7QlcLBk)</small>
+					</script>
+<!--
+GopherCon 2017: Mitchell Hashimoto - Advanced Testing with Go
+https://www.youtube.com/watch?v=8hQG7QlcLBk
+https://github.com/sourcegraph/about/blob/master/blogposts/advanced-testing-in-go.md
+
+dotGo 2019 - Dave Cheney - Constant Time
+https://www.youtube.com/watch?v=pN_lm6QqHcw
+
+LondonGophers 20/03/2019: Dave Cheney - Absolute Unit (Test)
+https://youtu.be/UKe5sX1dZ0k?t=1463
+-->
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### E<span style="text-transform: lowercase;">xperience-driven</span>
+
+- Observation what works what not
+- With Proof-of-Concepts
+- Less dogmatic
+					</script>
+				</section>
+
+				<section>
+<h4>N<span style="text-transform: lowercase;">ext stop</span></h4>
+
+<p>SaaS and ML Fintech</p>
+<ul>
+	<li><a href="https://smacc.io">SMACC.io</a></li>
+	<li><a href="https://hypatos.ai">Hypatos.ai</a></li>
+</ul>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### N<span style="text-transform: lowercase;">ew lessons</span>
+
+- Simple (common) project structure works the best
+- Review libraries before using them
+- Have internal training
+					</script>
+					<!-- https://peter.bourgon.org/go-for-industrial-programming/  -->
+				</section>
+
+				<!-- section data-markdown>
+					<script type="text/template">
+### G<span style="text-transform: lowercase;">o it yourself</span>
+
+- your lib or X or Y
+- might backfire <br />(code reviews and restricting allowed libs)
+					</script>
+				</section -->
+
+
+				<section data-markdown>
+					<script type="text/template">
+### C<span style="text-transform: lowercase;">ulture</span>
+
+<code>
+Golang is simple.<br />
+So we dive directly into talking about problems to solve.
+</code>
+
+<small style="font-size:9pt"><i>Borrowed from <a href="https://github.com/tg">Tomasz Grodzki</a></i></small>
+					</script>
+				</section>
+
+				<section>
+					<div class="row">
+						<div class='col-md-4'>
+							<h4>C<span style="text-transform: lowercase;">ulture shock</h4>
+								<ul>
+									<li style="margin: 0 0 20px 0;">No mocks?</li>
+									<li style="margin: 0 0 20px 0;">No DSLs</li>
+									<li style="margin: 0 0 20px 0;">No lib for X</li>
+									<li style="margin: 0 0 20px 0;">JSON parsing :)</li>
+									<li style="margin: 0 0 20px 0;">Not flexible</li>
+								</ul>
+							</div>
+							<div class='col-md-1'>
+							</div>
+							<div class='col-md-7'>
+								<img src="img/DEATH_METAL_GOPHER.png"
+								class="center-block" style="background-color:white;border:0;width: 80%"/>
+							</div>
+					</div>
+				</section>
+
+				<section> <!--  data-background="#000000" -->
+					<div class="row">
+						<div class='col-md-5'>
+							<h4>G<span style="text-transform: lowercase;">olden mean</span></h4>
+							<ol>
+								<li style="margin: 0 0 10px 0;">Guidelines, <br />not rules<br /><small>[<a href="https://youtu.be/UKe5sX1dZ0k?t=1453">Dave Cheney</a>]</small></li>
+								<li style="margin: 0 0 10px 0;">Hard to find</li>
+								<li style="margin: 0 0 10px 0;">It moves all the time</li>
+							</ol>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+
+							<img src="img/7436493790_6769e38742_k.jpg"
+								class="center-block" style="background-color:white;border-radius:10% 10% 10% 10%;border:0;width:100%"/>
+							<p><small style="font-size:6px">https://www.flickr.com/photos/bruno_brujah/</small></p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="img/landing_product.png" data-background-repeat="" data-background-size="100%">
+				</section>
+
+				<section data-background="img/landing_product_2.png" data-background-repeat="" data-background-size="100%">
+				</section>
+
+				<section> <!--  data-background="#000000" -->
+					<div class="row">
+						<div class='col-md-5'>
+							<h4>H<span style="text-transform: lowercase;">ow to find it?</span></h4>
+							<ol>
+								<li style="margin: 0 0 10px 0;">Team</li>
+								<li style="margin: 0 0 10px 0;">Inclusion</li>
+								<li style="margin: 0 0 10px 0;">Diversity</li>
+							</ol>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+
+							<img src="img/7436493790_6769e38742_k.jpg"
+								class="center-block" style="background-color:white;border-radius:10% 10% 10% 10%;border:0;width:100%"/>
+							<p><small style="font-size:6px">https://www.flickr.com/photos/bruno_brujah/</small></p>
+						</div>
+					</div>
+				</section>
+
+				<section> <!--  data-background="#000000" -->
+					<h4>M<span style="text-transform: lowercase;">ethods?</span></h4>
+					<ul>
+						<li>One-on-ones</li>
+						<li>Engineering hour</li>
+						<li>Moderate discussions</li>
+						<li>Communication is everybody responsibility</li>
+					</ul>
+					<p><small>More inspiration: <a href="https://golang.org/conduct#code">golang conduct</a></small></p>
+					<!--
+					Dealing With Challenges
+					http://katemats.com/one-technique-to-being-awesome-you-arent-using-enough-questions/
+					-->
+				</section>
+
+				<section>
+					<h4>S<span style="text-transform: lowercase;">tuck?</span> L<span style="text-transform: lowercase;">et us know</span></h4>
+					<ul>
+						<li>Lower the threshold</li>
+						<li>Time-boxing</li>
+						<li>Trigger-based [1]</li>
+					</ul>
+					<p><small><a href="https://en.wikipedia.org/wiki/Jeff_Cooper">[1] Cooper Code</a></small></p>
+				</section>
+
+				<section>
+					<h3>A<span style="text-transform: lowercase;">ssume good intentions</span></h3>
+					<h4>Always</h4>
+				</section>
+
+				<section>
+					<h3>S<span style="text-transform: lowercase;">trong opinions</span></h3>
+					<h3><span style="text-transform: lowercase;">weekly hold<span></h3>
+				</section>
+
+				<!-- section>
+					<h3>Y<span style="text-transform: lowercase;">ou own your inputs</span></h3>
+				</section -->
+
+				<section data-background="#000000">
+					<div class="row">
+						<div class='col-md-5'>
+							<h4>S<span style="text-transform: lowercase;">hip it</span></h4>
+							<ol>
+								<li style="margin: 0 0 20px 0;">Ship it</li>
+								<li style="margin: 0 0 20px 0;">...</li>
+								<li style="margin: 0 0 20px 0;">The rest</li>
+								<li style="margin: 0 0 20px 0;">Finding balance</li>
+							</ol>
+							<p>Kick Butt, Have Fun<br /><small>Sun Microsystems</small><p>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+							<img src="img/soyuz_launch_photo_nasa.jpg"
+								class="center-block" style="background-color:white;border:0;border-radius:10% 10% 10% 10%;width: 80%"/>
+							<p><small style="font-size:8pt">Photo by Nasa</small></p>
+						</div>
+					</div>
+				</section>
+
+
+				<!-- section>
+					<div class="row">
+						<div class='col-md-5'>
+							<h4>S<span style="text-transform: lowercase;">hip it</span></h4>
+							<ol>
+								<li style="margin: 0 0 20px 0;">Ship it</li>
+								<li style="margin: 0 0 20px 0;">...</li>
+								<li style="margin: 0 0 20px 0;">the rest</li>
+								<li style="margin: 0 0 20px 0;">Finding balance</li>
+							</ol>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+							<img src="img/judo_Jigoro_Kano_and_Kyuzo_Mifune.jpg"
+								class="center-block" style="background-color:white;border:0;width: 80%"/>
+							<p><small><a href="https://en.wikipedia.org/wiki/Judo">wikipedia</a></small></p>
+						</div>
+					</div>
+				</section -->
+
+				<section data-background="#000000">
+					<h4>S<span style="text-transform: lowercase;">hip it</span></h4>
+					<ol>
+						<li>Cut the scope</li>
+						<li>Cut the quality</li>
+						<li><a href="https://www.manager-tools.com/2012/02/delegating-floor">Delegate sth to the floor</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<h4><span style="text-transform: lowercase;">version 1 &#8594; version 2</span></h4>
+					<ul>
+							<li>v1 = fast, ~MVP</li>
+							<li>v2 = right</li>
+					</ul>
+					<p>Deliver! Patch. Patch</p>
+					<!-- https://gist.github.com/adamwiggins/5687294 -->
+					<p><small><a href="http://katemats.com/lean-software-development-build-v1s-and-v2s/">Kate Matsudaira's blog</a></small></p>
+				</section>
+
+				<section>
+					<h4><span style="text-transform: lowercase;">version 1</span></h4>
+					<ul>
+							<li>Understand</li>
+							<li>Validate</li>
+							<li>Avoid over-engineering</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4><span style="text-transform: lowercase;">version 2</span></h4>
+					<ul>
+						<li>Restructure</li>
+						<li>Fix</li>
+						<li>Re-factor</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4><span style="text-transform: lowercase;">version 1 &#8594; version 2</span></h4>
+					<ul>
+						<li>Will take more time</li>
+						<li>Find answers faster</li>
+						<li>Might give us more time</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4>I<span style="text-transform: lowercase;">dea?</span></h4>
+					<ul>
+						<li>Demonstrate it without negative effect on your work</li>
+						<li>Make it Real!</li>
+					</ul>
+
+					<p><small><a href="https://gist.github.com/adamwiggins/5687294">Heroku Values</a></small></p>
+			</section>
+
+			<section>
+				<h4>P<span style="text-transform: lowercase;">roblem?</span></h4>
+				<ul>
+					<li>come with a possible solution</li>
+				</ul>
+			</section>
+
+				<!-- section data-background="img/44940467924_0b4774d0a2_k.jpg" data-background-repeat="" data-background-size="100%">
+				</section -->
+
+				<section data-background="#000000">
+					<div class="row">
+						<div class='col-md-5'>
+							<h4><span style="text-transform: lowercase;"></span></h4>
+							<ul>
+								<li style="margin: 0 0 10px 0;">Powerful language</li>
+								<li style="margin: 0 0 10px 0;">and tools (k8s, cloud)</li>
+								<li style="margin: 0 0 10px 0;"><b>combined experience</b></li>
+							</ul>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+
+							<img src="img/44940467924_0b4774d0a2_k.jpg"
+								class="center-block" style="background-color:white;border-radius:10% 10% 10% 10%;border:0;width:100%"/>
+							<p><small style="font-size:6px">https://www.flickr.com/photos/bruno_brujah/</small></p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#000000">
+					<h4>G<span style="text-transform: lowercase;">et know each other</span></h4>
+					<ul>
+						<li style="margin: 0 0 10px 0;">Talk with people around you</li>
+					</ul>
+					<p><a href="http://katemats.com/one-technique-to-being-awesome-you-arent-using-enough-questions/">Example of good questions</a></p>
+				</section>
+
+				<!-- section data-background="#000000">
+					<div class="row">
+						<div class='col-md-5'>
+							<h4>G<span style="text-transform: lowercase;">olden mean</span></h4>
+							<ol>
+								<li style="margin: 0 0 10px 0;">We have a powerfull tools</li>
+								<li style="margin: 0 0 10px 0;">A lot of experience in community</li>
+								<li style="margin: 0 0 10px 0;">Let's find it!</li>
+							</ol>
+						</div>
+						<div class='col-md-1'></div>
+						<div class='col-md-6'>
+
+							<img src="img/7436493790_6769e38742_k.jpg"
+								class="center-block" style="background-color:white;border-radius:10% 10% 10% 10%;border:0;width:100%"/>
+							<p><small style="font-size:6px">https://www.flickr.com/photos/bruno_brujah/</small></p>
+						</div>
+					</div>
+				</section -->
+
+				<!-- section>
+					<h4>Challenges</h4>
+					<div class="row">
+						<div class='col-md-4'>
+							<ul>
+								<li style="margin: 0 0 20px 0;">Speakers</li>
+								<li style="margin: 0 0 20px 0;"></li>
+							</ul>
+						</div>
+						<div class='col-md-1'>
+						</div>
+						<div class='col-md-7'>
+							<img src="img/GoCommunity.png"
+								class="center-block" style="background-color:white;border:0;width: 100%"/>
+							</div>
+						</div>
+				</section -->
+
+				<section data-background="img/smacc_header_IT_source.jpg" data-background-repeat="" data-background-size="100%" data-background-position="bottom"
+				style="position: relative; top:0">
+					<h4>Thank you. Questions?</h4>
+					<p><small>https://github.com/wojciech12</small></p>
+				</section>
+
+								<section data-background="#000000">
+										<h3>Doing good</h3>
+									<div class="row">
+										<div class='col-md-5'>
+											<ul>
+												<li style="margin: 0 0 27px 0;">Jetbrains:<br />most promising</li>
+												<li style="margin: 0 0 27px 0;">IEEE:<br />5th fastest growing</li>
+												<li style="margin: 0 0 27px 0;">Kubernetes</li>
+												<li style="margin: 0 0 27px 0;">CloudNative</li>
+												<li style="margin: 0 0 27px 0;">Next enterprises?</li>
+											</ul>
+											<!-- https://www.jetbrains.com/research/devecosystem-2018/ -->
+											<!-- https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages -->
+											<!-- https://octoverse.github.com/projects -->
+										</div>
+										<div class='col-md-1'>
+										</div>
+										<div class='col-md-6'>
+											<!-- top left top right bottom right bottom left -->
+											<img src="img/soyuz_launch_photo_nasa.jpg"
+												style="background-color:white;border:0;width:90%;border-radius:10% 10% 10% 10%;"/>
+										</div>
+									</div>
+									<!-- p><small>W<span style="text-transform: lowercase;">ojciech</span> B<span style="text-transform: lowercase;">arczyński</span> [H<span style="text-transform: lowercase;">ead of</span> E<span style="text-transform: wlowercase;">ngineering</span>]<br />
+										<a href="https://smacc.io" style="color:#3149a8">SMACC.<span style="text-transform: lowercase;">io</span></a> | <a href="https://hypatos.ai" style="color:#3149a8">H<span style="text-transform: lowercase;">ypatos.ai</span></a><br />
+										4D<span style="text-transform: lowercase;">evelopers,</span> W<span style="text-transform: lowercase;">arsaw</span>, 8 A<span style="text-transform: lowercase;">pril</span> 2019</small></p -->
+								</section>
+
+								<section>
+									<h4>Community</h4>
+									<div class="row">
+										<div class='col-md-4'>
+											<ul>
+												<li style="margin: 0 0 20px 0;">Gopher Warsaw</li>
+												<li style="margin: 0 0 20px 0;">GoCracow</li>
+												<li style="margin: 0 0 20px 0;">Gopher Silesia</li>
+												<li style="margin: 0 0 20px 0;">Golang UG Gdańsk</li>
+											</ul>
+										</div>
+										<div class='col-md-1'>
+										</div>
+										<div class='col-md-7'>
+											<img src="img/GoCommunity.png"
+												class="center-block" style="background-color:white;border:0;width: 100%"/>
+											</div>
+										</div>
+								</section>
+
+								<section>
+									<div class="row">
+										<div class='col-md-6'>
+											<h3>Ideas</h3>
+											<ul>
+												<li style="margin: 0 0 20px 0;">Talks</li>
+												<li style="margin: 0 0 20px 0;">Workshops</li>
+												<li style="margin: 0 0 20px 0;">Speed get-know each other</li>
+												<li style="margin: 0 0 20px 0;">...</li>
+											</ul>
+										</div>
+										<div class='col-md-1'>
+										</div>
+										<div class='col-md-5'>
+											<img src="img/meetup_classic.jpeg"
+												class="center-block"
+												style="background-color:white;border:0;border-radius:10% 10% 10% 10%;width:90%"/>
+												<br />
+												<img src="img/meetup_workshop.jpeg"
+													class="center-block" style="background-color:white;border:0;border-radius:10% 10% 10% 10%;width:90%"/>
+											</div>
+										</div>
+								</section>
+
+				<!-- section>
+					<h3>:?</h3>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-12'>
+								<ul>
+									<li>Wojciech Barczyński</li>
+									<li>Software Developer &amp; System Engineer</li>
+									<li>Machine-Learning FinTech API<br/>and SaaS product</li>
+									<li>Since 2016, k8s startup practionier</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row d-flex flex-row justify-content-center align-items-center">
+							<br />
+							<br />
+							<br />
+							<p><small>G<span style="text-transform: lowercase;">ithub: </span><a href="https://github.com/wojciech12" style="color:#3149a8"><span style="text-transform: lowercase;">wojciech12</span></a>
+								| Linked: <a href="https://www.linkedin.com/in/wojciechbarczynski/" style="color:#3149a8">IN</a>
+								| HP<span style="text-transform: lowercase;">: </span><a href="http://wbarczynski.pl" style="color:#3149a8"><span style="text-transform: lowercase;">wbarczynski.pl</span></a>
+								| T: <a href="https://twitter.com/wbarczynski" style="color:#3149a8"><span style="text-transform: lowercase;">@wbarczynski</span></a></small></p>
+						</div>
+					</div>
+				</section -->
+
+<!--
+Domen boundary
+Pojedyncza odpowiedzialność
+https://www.slideshare.net/mobile/chris.e.richardson/code-freeze-2018-there-is-no-such-thing-as-a-microservice?ref=https://microservices.io/microservices/news/2018/02/20/no-such-thing-as-a-microservice.html
+https://www.martinfowler.com/articles/microservices.html#CharacteristicsOfAMicroserviceArchitecture
+-->
+
+				<!-- section data-markdown>
+					<script type="text/template">
+#### Ingress
+
+<table>
+	<thread>
+		<tr>
+			<th>Pattern</th><th>Service</th>
+		</tr>
+	</thread>
+	<tbody>
+		<tr>
+			<td>api.hypatos.ai/v1/users</td><td>users-v1</td>
+		</tr>
+		<tr>
+			<td>api.hypatos.ai/v2/users</td><td>users-v2</td>
+		</tr>
+		<tr>
+			<td>smacc.io</td><td>website</td>
+		</tr>
+	</tbody>
+</table>
+					</script>
+				</section -->
+
+				<!-- section>
+					<h4>Basic Concepts</h4>
+					<p><table>
+						<thread>
+							<tr>
+								<th>Name</th><th>Purpose</th><th></th>
+							</tr>
+						</thread>
+						<tbody>
+							<tr>
+								<td>Service</td><td>Interface</td><td>Entry point (Service Name)</td>
+							</tr>
+							<tr>
+								<td>Deployment</td><td>Factory</td><td>How many pods, which pods</td>
+							</tr>
+							<tr>
+								<td>Pod</td><td>Implementation</td><td>1+ docker running</td>
+							</tr>
+						</tbody>
+					</table></p>
+				</section -->
+
+				<!-- section>
+					<img src="img/hypatos/hypatos_logo_b.png" width="40%" />
+					<img src="img/hypatos_hiring/logo_go.png" width="25%" />
+					<img src="img/hypatos_hiring/logo_python.png" width="25%" />
+
+					<img src="img/hypatos_hiring/logo_pytorch.png" width="20%" />
+					<img src="img/hypatos_hiring/logo_tensorflow.png" width="25%" />
+					<img src="img/hypatos_hiring/logo_kubernetes.svg" width="10%" />
+					<img src="img/hypatos_hiring/logo_openapi.png" width="10%" />
+
+					<img src="img/hypatos_hiring/logo_aws.png" width="20%" />
+					<img src="img/hypatos_hiring/logo_prometheus.png" width="15%"/>
+					<img src="img/hypatos_hiring/logo_azure.png" width="15%" />
+					<img src="img/hypatos_hiring/logo_lambda.png" width="15%" />
+
+					<img src="img/hypatos_hiring/smacc_lets_do_this.png" width="25%" />
+				</section -->
+
+
+					<!--
+						BACKUP SLIDES
+					-->
+				<section data-background="img/smacc_header_IT_source.jpg" data-background-repeat="" data-background-size="100%" data-background-position="bottom" style="position: relative; top:0">
+					<h2>Backup Slides</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
